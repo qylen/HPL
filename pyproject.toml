@@ -27,3 +27,33 @@ include = ["hpl1*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = [
+  "E501",   # long lines: data-science code with wide expressions
+  "SIM102", # nested ifs kept deliberately for auditability
+  "RUF059", # unpacked sentinels used for documentation clarity
+  "F841",   # intentionally-unused locals in tests document intent
+  "UP031",  # %-formatting is fine for logging strings
+  "ASYNC230", # line-buffered JSONL writes in recorder loops (original design)
+  "BLE001",  # reconnect loops must catch everything and retry
+  "TRY004",  # ValueError for config errors is conventional here
+  "B017",    # pytest.raises(Exception) for corrupted-archive test is intentional
+  "RUF012",  # test doubles with mutable class defaults are scoped per-test
+  "PLW1510", # demo subprocess returncode asserted explicitly afterwards
+  "RUF046", "C408", "UP024", "UP035", "UP037", "F541", "PLR1730",
+  "RUF005",  # list concat via + is clearer in feature assembly
+  "E402",    # backtest.py appends the new engine below the legacy section
+  "E702",    # compact statements in test fixtures
+  "E741",    # short loop vars in numeric code
+  "B905",    # zip strict not needed on equal-length numeric arrays
+  "SIM105", "SIM108", "B007", "RUF007", "RUF100",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["F841", "RUF059", "B017"]

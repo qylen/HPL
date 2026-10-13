@@ -1,0 +1,67 @@
+{
+  "rows": 86366,
+  "market": "spot",
+  "symbol": "BTCFDUSD",
+  "config": {
+    "starting_capital": 10000.0,
+    "leverage": 1.0,
+    "position_fraction": 0.5,
+    "taker_fee_bps": 5.0,
+    "maker_fee_bps": 2.0,
+    "slippage_bps": 1.0,
+    "fee_scenario": "user",
+    "use_spread": true,
+    "assumed_spread_bps": 1.0,
+    "spread_source": "assumed (no book history for market)",
+    "min_edge_bps": 0.5
+  },
+  "total_net_return_pct": 0.0,
+  "net_pnl": 0.0,
+  "gross_pnl_before_costs": 0.0,
+  "costs_by_component": {
+    "commission": 0.0,
+    "spread": 0.0,
+    "slippage": 0.0,
+    "funding": 0.0
+  },
+  "total_costs": 0.0,
+  "max_drawdown_pct": 0.0,
+  "sharpe_per_second": 0.0,
+  "sharpe_annualized_caveat": "per-second Sharpe annualized by sqrt(31536000) assumes i.i.d. scaling that one-second returns violate; treat as diagnostic only",
+  "downside_deviation_bps": 0.0,
+  "n_trades": 0,
+  "n_round_trips": 0,
+  "turnover_notional": 0.0,
+  "avg_trade_notional": 0.0,
+  "win_rate": null,
+  "avg_win": 0.0,
+  "avg_loss": 0.0,
+  "net_expectancy_per_round_trip": null,
+  "losing_days": 0,
+  "trading_days": 0,
+  "regime_performance": {
+    "low_vol": {
+      "seconds": 28779,
+      "mean_net_return_bps": 0.0
+    },
+    "mid_vol": {
+      "seconds": 28779,
+      "mean_net_return_bps": 0.0
+    },
+    "high_vol": {
+      "seconds": 28808,
+      "mean_net_return_bps": 0.0
+    }
+  },
+  "max_exposure_notional": 0.0,
+  "max_leverage_utilized": 0.0,
+  "margin_breach_seconds": 0,
+  "halted_notice": null,
+  "final_position_flat": true,
+  "hac": {
+    "hac_lags": 120,
+    "hac_z_score": 0.0,
+    "hac_p_value_two_sided": 1.0
+  },
+  "warning": "Simulated execution only. Queue position, partial fills, market impact beyond slippage bps, exchange outages and latency are not modelled; results are not a return forecast."
+}

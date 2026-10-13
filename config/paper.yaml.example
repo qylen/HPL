@@ -1,0 +1,18 @@
+# Paper-trading configuration example. PAPER ONLY: no real orders exist in
+# this codebase. Copy to config/paper.yaml and adjust.
+research:
+  market: futures
+  symbol: BTCUSDT
+  random_seed: 13
+costs:
+  taker_fee_bps: 5.0
+  slippage_bps: 1.0
+  fee_scenario: user
+risk:
+  starting_capital: 10000.0
+  leverage: 1.0
+  position_fraction: 0.5
+  max_daily_loss_pct: 3.0
+  max_drawdown_pct: 10.0
+  cooldown_seconds: 10
+  stale_quote_max_seconds: 30.0

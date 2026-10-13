@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "label_alignment",
+      "passed": true,
+      "max_abs_error": 0.0,
+      "tolerance": 1e-10,
+      "final_row_unlabeled": true
+    },
+    {
+      "name": "feature_truncation",
+      "passed": true,
+      "max_abs_error": 0.0,
+      "nan_pattern_mismatches": 0,
+      "rows_compared": 431500,
+      "columns_compared": 28
+    },
+    {
+      "name": "planted_leak_detection",
+      "passed": true,
+      "honest_features_pass": true,
+      "leaked_feature_flagged": true,
+      "note": "truncation check must pass honest features and fail future-leaking ones"
+    }
+  ]
+}

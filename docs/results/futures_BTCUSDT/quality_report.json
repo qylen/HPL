@@ -1,0 +1,24 @@
+{
+  "rows_total": 432000,
+  "book_seconds": 431984,
+  "trade_seconds": 428490,
+  "event_seconds": 431984,
+  "coverage_pct": 99.996,
+  "data_gap_seconds": 0,
+  "stale_or_invalid_seconds": 0,
+  "usable_rows": 432000,
+  "usable_labeled_rows": 431999,
+  "usable_pct": 100.0,
+  "invalid_spread_rows": 0,
+  "timestamp_semantics": "exchange timestamps (archive transaction/transact time); no local receipt time exists in historical archives",
+  "integrity": {
+    "duplicate_events": 0,
+    "out_of_order_events": 0,
+    "crossed_quotes": 0,
+    "applied_events": 0
+  },
+  "gap_runs_ge_5s": 0,
+  "gap_run_examples": [],
+  "quote_age_seconds_p50": 0.0,
+  "quote_age_seconds_p99": 0.0
+}

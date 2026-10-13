@@ -1,0 +1,16 @@
+services:
+  research:
+    build: .
+    command: python -m hpl1 research --market futures --symbol BTCUSDT --start 2024-03-25 --end 2024-03-29
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+  paper:
+    build: .
+    command: python -m hpl1 paper --market futures --model artifacts/research/futures_BTCUSDT/best_model.joblib
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+      - ./logs:/app/logs
+      - ./run:/app/run
+    restart: unless-stopped

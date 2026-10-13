@@ -1,0 +1,317 @@
+{
+  "hypothesis": "Order-flow imbalance, liquidity, spread, volatility, trade flow and regime changes predict the next one-second mid-price return well enough to trade profitably after realistic taker execution costs.",
+  "market": "futures",
+  "symbol": "BTCUSDT",
+  "days": "2024-03-25..2024-03-29",
+  "data_quality": {
+    "rows_total": 432000,
+    "book_seconds": 431984,
+    "trade_seconds": 428490,
+    "event_seconds": 431984,
+    "coverage_pct": 99.996,
+    "data_gap_seconds": 0,
+    "stale_or_invalid_seconds": 0,
+    "usable_rows": 432000,
+    "usable_labeled_rows": 431999,
+    "usable_pct": 100.0,
+    "invalid_spread_rows": 0,
+    "timestamp_semantics": "exchange timestamps (archive transaction/transact time); no local receipt time exists in historical archives",
+    "integrity": {
+      "duplicate_events": 0,
+      "out_of_order_events": 0,
+      "crossed_quotes": 0,
+      "applied_events": 0
+    },
+    "gap_runs_ge_5s": 0,
+    "gap_run_examples": [],
+    "quote_age_seconds_p50": 0.0,
+    "quote_age_seconds_p99": 0.0
+  },
+  "models_compared": [
+    "zero",
+    "ridge",
+    "logistic",
+    "hist",
+    "law",
+    "regime"
+  ],
+  "model_table": {
+    "zero": {
+      "val_r2": 0.0,
+      "val_dir": null,
+      "test_r2": null,
+      "test_corr": null
+    },
+    "ridge": {
+      "val_r2": 0.08091215307802957,
+      "val_dir": null,
+      "test_r2": null,
+      "test_corr": null
+    },
+    "logistic": {
+      "val_r2": -0.04129105623736917,
+      "val_dir": null,
+      "test_r2": null,
+      "test_corr": null
+    },
+    "hist": {
+      "val_r2": 0.09548662503643379,
+      "val_dir": null,
+      "test_r2": 0.09978495260634201,
+      "test_corr": 0.31801201380335287
+    },
+    "law": {
+      "val_r2": 0.011268525058450662,
+      "val_dir": null,
+      "test_r2": null,
+      "test_corr": null
+    },
+    "regime": {
+      "val_r2": 0.08538432233748605,
+      "val_dir": null,
+      "test_r2": null,
+      "test_corr": null
+    }
+  },
+  "selected_model": "hist",
+  "selection_basis": "validation split only; test untouched until evaluation",
+  "validation_metrics": {
+    "rows": 86357,
+    "mse": 5.848072826992097e-09,
+    "zero_forecast_mse": 6.465435436184299e-09,
+    "oos_r2_vs_zero": 0.09548662503643379,
+    "mae": 4.256780656541367e-05,
+    "directional_accuracy_nonzero": 0.758876625086791,
+    "zero_return_fraction": 0.5163449401901409,
+    "directional_accuracy_note": "sign agreement over non-zero returns; zero-tick seconds excluded",
+    "conditional_up_mean_bps": 0.1968188800845918,
+    "conditional_down_mean_bps": -0.18541077088731306,
+    "prediction_return_correlation": 0.30908807459139315,
+    "fit_seconds": 4.36
+  },
+  "test_metrics": {
+    "rows": 86358,
+    "mse": 3.2230975682580423e-09,
+    "zero_forecast_mse": 3.580364022562937e-09,
+    "oos_r2_vs_zero": 0.09978495260634201,
+    "mae": 3.0691591999160334e-05,
+    "directional_accuracy_nonzero": 0.8074596145450009,
+    "zero_return_fraction": 0.6286852405104333,
+    "directional_accuracy_note": "sign agreement over non-zero returns; zero-tick seconds excluded",
+    "conditional_up_mean_bps": 0.14698011703548813,
+    "conditional_down_mean_bps": -0.14893594052203196,
+    "prediction_return_correlation": 0.31801201380335287
+  },
+  "statistical_battery": {
+    "n": 86358,
+    "hac_gross_mean": {
+      "hac_lags": 120,
+      "hac_z_score": 37.57768011543685,
+      "hac_p_value_two_sided": 4.97718150789326e-309
+    },
+    "correlation_block_bootstrap": {
+      "point": 0.31801201380335287,
+      "ci_low": 0.30269031246094186,
+      "ci_high": 0.33296373502162846,
+      "block": 60,
+      "replicates": 300
+    },
+    "placebo_time_shift": {
+      "real_correlation": 0.31801201380335287,
+      "shifted_abs_correlation_mean": 0.053312839456691255,
+      "shifted_abs_correlation_p95": 0.19457918955956321,
+      "alignment_dependent": true,
+      "n_shifts": 20
+    },
+    "directional_calibration": {
+      "brier_score": 0.12857945245345861,
+      "brier_baseline_up_rate": 0.18952500057898516,
+      "probability_mapping": "validation-fit logistic (leakage-clean)",
+      "reliability": [
+        {
+          "bin": "[0.0,0.2)",
+          "n": 40101,
+          "predicted_up_rate": 0.12393163383336718,
+          "observed_up_rate": 0.0683025360963567
+        },
+        {
+          "bin": "[0.2,0.4)",
+          "n": 33807,
+          "predicted_up_rate": 0.2789183954062921,
+          "observed_up_rate": 0.19915993729109355
+        },
+        {
+          "bin": "[0.4,0.6)",
+          "n": 10304,
+          "predicted_up_rate": 0.485502212314505,
+          "observed_up_rate": 0.5167895962732919
+        },
+        {
+          "bin": "[0.6,0.8)",
+          "n": 2038,
+          "predicted_up_rate": 0.6592770668334256,
+          "observed_up_rate": 0.7330716388616291
+        },
+        {
+          "bin": "[0.8,1.0)",
+          "n": 108,
+          "predicted_up_rate": 0.8711045642528977,
+          "observed_up_rate": 0.7037037037037037
+        }
+      ]
+    },
+    "holm_correction": {
+      "alpha": 0.05,
+      "n_tests": 2,
+      "adjusted": {
+        "hac_gross_mean": {
+          "raw_p": 4.97718150789326e-309,
+          "holm_p": 9.95436301578652e-309,
+          "significant_at_alpha": true
+        },
+        "placebo_alignment": {
+          "raw_p": 0.8054208104404368,
+          "holm_p": 0.8054208104404368,
+          "significant_at_alpha": false
+        }
+      }
+    }
+  },
+  "backtest": {
+    "rows": 86358,
+    "market": "futures",
+    "symbol": "BTCUSDT",
+    "config": {
+      "starting_capital": 10000.0,
+      "leverage": 1.0,
+      "position_fraction": 0.5,
+      "taker_fee_bps": 5.0,
+      "maker_fee_bps": 2.0,
+      "slippage_bps": 1.0,
+      "fee_scenario": "user",
+      "use_spread": true,
+      "assumed_spread_bps": null,
+      "spread_source": "observed_quotes",
+      "min_edge_bps": 0.5
+    },
+    "total_net_return_pct": 0.0,
+    "net_pnl": 0.0,
+    "gross_pnl_before_costs": 0.0,
+    "costs_by_component": {
+      "commission": 0.0,
+      "spread": 0.0,
+      "slippage": 0.0,
+      "funding": 0.0
+    },
+    "total_costs": 0.0,
+    "max_drawdown_pct": 0.0,
+    "sharpe_per_second": 0.0,
+    "sharpe_annualized_caveat": "per-second Sharpe annualized by sqrt(31536000) assumes i.i.d. scaling that one-second returns violate; treat as diagnostic only",
+    "downside_deviation_bps": 0.0,
+    "n_trades": 0,
+    "n_round_trips": 0,
+    "turnover_notional": 0.0,
+    "avg_trade_notional": 0.0,
+    "win_rate": null,
+    "avg_win": 0.0,
+    "avg_loss": 0.0,
+    "net_expectancy_per_round_trip": null,
+    "losing_days": 0,
+    "trading_days": 0,
+    "regime_performance": {
+      "low_vol": {
+        "seconds": 28777,
+        "mean_net_return_bps": 0.0
+      },
+      "mid_vol": {
+        "seconds": 28777,
+        "mean_net_return_bps": 0.0
+      },
+      "high_vol": {
+        "seconds": 28804,
+        "mean_net_return_bps": 0.0
+      }
+    },
+    "max_exposure_notional": 0.0,
+    "max_leverage_utilized": 0.0,
+    "margin_breach_seconds": 0,
+    "halted_notice": null,
+    "final_position_flat": true,
+    "hac": {
+      "hac_lags": 120,
+      "hac_z_score": 0.0,
+      "hac_p_value_two_sided": 1.0
+    },
+    "warning": "Simulated execution only. Queue position, partial fills, market impact beyond slippage bps, exchange outages and latency are not modelled; results are not a return forecast."
+  },
+  "fee_sensitivity": [
+    {
+      "taker_fee_bps": 0.0,
+      "n_trades": 30080,
+      "n_round_trips": 25199,
+      "total_net_return_pct": 241.63226768461848,
+      "total_costs": 750.5241917203363,
+      "max_drawdown_pct": -0.17942072947700893
+    },
+    {
+      "taker_fee_bps": 0.5,
+      "n_trades": 28,
+      "n_round_trips": 14,
+      "total_net_return_pct": -0.06149627280003234,
+      "total_costs": 14.764227280000826,
+      "max_drawdown_pct": -0.16304748366375854
+    },
+    {
+      "taker_fee_bps": 1.0,
+      "n_trades": 0,
+      "n_round_trips": 0,
+      "total_net_return_pct": 0.0,
+      "total_costs": 0.0,
+      "max_drawdown_pct": 0.0
+    },
+    {
+      "taker_fee_bps": 2.0,
+      "n_trades": 0,
+      "n_round_trips": 0,
+      "total_net_return_pct": 0.0,
+      "total_costs": 0.0,
+      "max_drawdown_pct": 0.0
+    },
+    {
+      "taker_fee_bps": 5.0,
+      "n_trades": 0,
+      "n_round_trips": 0,
+      "total_net_return_pct": 0.0,
+      "total_costs": 0.0,
+      "max_drawdown_pct": 0.0
+    }
+  ],
+  "config": {
+    "costs": {
+      "taker_fee_bps": 5.0,
+      "maker_fee_bps": 2.0,
+      "slippage_bps": 1.0,
+      "use_spread": true,
+      "fee_scenario": "user"
+    },
+    "risk": {
+      "starting_capital": 10000.0,
+      "leverage": 1.0,
+      "position_fraction": 0.5,
+      "max_daily_loss_pct": 3.0,
+      "max_drawdown_pct": 10.0,
+      "cooldown_seconds": 10,
+      "max_turnover_per_day": 10.0,
+      "min_edge_bps": 0.5,
+      "stale_quote_max_seconds": 30.0,
+      "kill_switch_file": "run/kill_switch"
+    },
+    "seed": 13
+  },
+  "verdict": {
+    "statistical_predictability": "supported",
+    "signal_is_alignment_dependent_not_artifact": true,
+    "net_taker_profitability": "rejected",
+    "summary": "Out-of-sample predictability exists (R2=0.100, corr=0.318) but predicted edges never clear the round-trip cost hurdle: zero trades at realistic taker fees. Predictability is NOT profitability."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "rows": 86358,
+  "market": "futures",
+  "symbol": "BTCUSDT",
+  "config": {
+    "starting_capital": 10000.0,
+    "leverage": 1.0,
+    "position_fraction": 1.0,
+    "taker_fee_bps": 0.0,
+    "maker_fee_bps": 0.0,
+    "slippage_bps": 0.0,
+    "fee_scenario": "zero",
+    "use_spread": true,
+    "assumed_spread_bps": null,
+    "spread_source": "observed_quotes",
+    "min_edge_bps": 0.0
+  },
+  "total_net_return_pct": 241.63226768461848,
+  "net_pnl": 24163.22676846185,
+  "gross_pnl_before_costs": 24913.750960182184,
+  "costs_by_component": {
+    "commission": 0.0,
+    "spread": 739.7940500072523,
+    "slippage": 0.0,
+    "funding": 10.730141713084002
+  },
+  "total_costs": 750.5241917203363,
+  "max_drawdown_pct": -0.17942072947700893,
+  "sharpe_per_second": 0.25167615309389035,
+  "sharpe_annualized_caveat": "per-second Sharpe annualized by sqrt(31536000) assumes i.i.d. scaling that one-second returns violate; treat as diagnostic only",
+  "downside_deviation_bps": 0.4933067754712597,
+  "n_trades": 30080,
+  "n_round_trips": 25199,
+  "turnover_notional": 976982466.3832496,
+  "avg_trade_notional": 32479.470291996342,
+  "win_rate": 0.4208103496170483,
+  "avg_win": 2.92430063183676,
+  "avg_loss": -1.0749224528950863,
+  "net_expectancy_per_round_trip": 0.6079920115874926,
+  "losing_days": 0,
+  "trading_days": 0,
+  "regime_performance": {
+    "low_vol": {
+      "seconds": 28777,
+      "mean_net_return_bps": 0.09298935387443011
+    },
+    "mid_vol": {
+      "seconds": 28777,
+      "mean_net_return_bps": 0.132677970989708
+    },
+    "high_vol": {
+      "seconds": 28804,
+      "mean_net_return_bps": 0.20112088698856384
+    }
+  },
+  "max_exposure_notional": 34123.3268,
+  "max_leverage_utilized": 3.4123326800000005,
+  "margin_breach_seconds": 70451,
+  "halted_notice": null,
+  "final_position_flat": true,
+  "hac": {
+    "hac_lags": 120,
+    "hac_z_score": 48.87465006482389,
+    "hac_p_value_two_sided": 0.0
+  },
+  "warning": "Simulated execution only. Queue position, partial fills, market impact beyond slippage bps, exchange outages and latency are not modelled; results are not a return forecast.",
+  "measurement_note": "UNCONSTRAINED risk config (no turnover cap/cooldown/halts): measures the raw economic content of the signal net of spread only. Not a tradable strategy configuration."
+}

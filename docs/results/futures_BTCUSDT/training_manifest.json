@@ -1,0 +1,68 @@
+{
+  "selected_model": "hist",
+  "selection_rule": "max validation oos_r2_vs_zero; test evaluated once",
+  "models_compared": [
+    "zero",
+    "ridge",
+    "logistic",
+    "hist",
+    "law",
+    "regime"
+  ],
+  "rows_usable": 431939,
+  "splits": {
+    "train": {
+      "start": 0,
+      "stop": 259162,
+      "rows": 259162
+    },
+    "validation": {
+      "start": 259193,
+      "stop": 345550,
+      "rows": 86357
+    },
+    "test": {
+      "start": 345581,
+      "stop": 431939,
+      "rows": 86358
+    }
+  },
+  "purge_seconds": 1,
+  "embargo_seconds": 30,
+  "feature_columns": [
+    "ofi",
+    "ofi_norm",
+    "ofi_norm_5s",
+    "trade_imbalance",
+    "trade_imbalance_5s",
+    "trade_volume_log",
+    "trade_volume_5s_log",
+    "buy_volume_log",
+    "sell_volume_log",
+    "trade_count_log",
+    "spread_bps",
+    "depth_total",
+    "depth_imbalance",
+    "mid_return_1s",
+    "volatility_5s",
+    "volatility_30s",
+    "quote_update_count_log",
+    "quote_age_ms",
+    "time_sin",
+    "time_cos",
+    "volatility_60s",
+    "volume_imb_60s",
+    "ofi_lag1",
+    "ret_lag1",
+    "liq_pressure",
+    "price_impact_5s",
+    "activity_z",
+    "vol_regime"
+  ],
+  "random_seed": 13,
+  "trained_utc": "2026-10-12T16:29:14Z",
+  "market": "futures",
+  "symbol": "BTCUSDT",
+  "days": "2024-03-25..2024-03-29",
+  "leakage_passed": true
+}

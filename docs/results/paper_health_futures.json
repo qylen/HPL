@@ -1,0 +1,23 @@
+{
+  "ts_utc": "2026-10-12T16:40:26.356570+00:00",
+  "events_count": 45999,
+  "seconds_buffered": 150,
+  "book_age_seconds": 5.006884211999932,
+  "book_valid": true,
+  "decisions": 87,
+  "skipped": 1,
+  "fills": 0,
+  "position_qty": 0.0,
+  "cash": 10000.0,
+  "equity": 10000.0,
+  "realized_pnl": 0.0,
+  "last_prediction_bps": 0.0572998277260695,
+  "kill_switch": {
+    "tripped": false,
+    "reason": null,
+    "tripped_at": null,
+    "manual_file_found": false
+  },
+  "model": "HistGBModel",
+  "started_utc": "2026-10-12T16:37:51.336671+00:00"
+}
